@@ -1,1 +1,327 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSKbase — Логистический комплекс в Воскресенске</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff6600;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #e65c00;
+        }
+        
+        /* Навигация по разделам */
+        nav {
+            background: #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav li {
+            margin: 0 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #ff6600;
+        }
+        
+        /* Секции (разделы) */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        section:nth-child(even) {
+            background: white;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #333;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            color: #ff6600;
+        }
+        
+        /* Контакты */
+        .contacts {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .contacts div {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка с главным заголовком -->
+    <header id="home">
+        <div class="container">
+            <h1>VSKbase — логистический комплекс в Воскресенске</h1>
+            <p>Производственные и складские площади с идеальной транспортной доступностью. Общая площадь 2020 м², готовые коммуникации, охраняемая территория.</p>
+            <a href="#contacts" class="btn">Оставить заявку</a>
+        </div>
+    </header>
+    
+    <!-- Навигационное меню (якорные ссылки) -->
+    <nav>
+        <ul>
+            <li><a href="#location">Локация</a></li>
+            <li><a href="#params">Технические параметры</a></li>
+            <li><a href="#infrastructure">Инфраструктура</a></li>
+            <li><a href="#production">Производственные зоны</a></li>
+            <li><a href="#office">Офисный модуль</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Секция "Локация" -->
+    <section id="location">
+        <div class="container">
+            <h2>Локация</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Адрес</h3>
+                    <p>Московская обл., Воскресенск, ул. Центральная, с36А</p>
+                    <p><strong>Транспортная доступность:</strong></p>
+                    <ul>
+                        <li>3 км от трассы М-5 "Урал"</li>
+                        <li>10 км до склада Wildberries</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Соседние предприятия</h3>
+                    <ul>
+                        <li>АО "Воскресенскцемент"</li>
+                        <li>ООО "Технониколь"</li>
+                        <li>АО "ФосАгро"</li>
+                        <li>Склады Wildberries и Ozon</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция "Технические параметры" -->
+    <section id="params">
+        <div class="container">
+            <h2>Технические параметры</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Площади</h3>
+                    <ul>
+                        <li>Общая площадь: 2020 м²</li>
+                        <li>Застройка: 640 м²</li>
+                        <li>Свободные зоны: 1178 м²</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Коммуникации</h3>
+                    <ul>
+                        <li>Электричество: 100 кВт (масштабируемо до 500 кВт)</li>
+                        <li>Газ: труба ø200 мм, давление 0.003 МПа</li>
+                        <li>Водоснабжение: скважина</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Нагрузки</h3>
+                    <ul>
+                        <li>Нагрузка на пол: 5 т/м²</li>
+                        <li>Высота потолков: 4.5 м</li>
+                        <li>Макс. нагрузка транспорта: 20 т</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Остальные секции по аналогии -->
+    <section id="infrastructure">
+        <div class="container">
+            <h2>Логистическая инфраструктура</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Дорожная сеть</h3>
+                    <ul>
+                        <li>Асфальтированные подъезды</li>
+                        <li>Ширина проездов: 6 м</li>
+                        <li>Радиус разворота: 15 м</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Парковочные зоны</h3>
+                    <ul>
+                        <li>Открытая площадка: 1100 м²</li>
+                        <li>Навес: 43.6 м²</li>
+                        <li>Вместимость: до 90 авто</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция "Производственные зоны" -->
+    <section id="production">
+        <div class="container">
+            <h2>Производственные зоны</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Производственный блок</h3>
+                    <ul>
+                        <li>Площадь: 240 м²</li>
+                        <li>Высота: 4.5 м</li>
+                        <li>Ворота: 3.63 м</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Дополнительные постройки</h3>
+                    <ul>
+                        <li>Недостроенный ангар (потенциал расширения)</li>
+                        <li>Гараж 25 м² (с ямой)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция "Офисный модуль" -->
+    <section id="office">
+        <div class="container">
+            <h2>Офисный модуль</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>1 этаж</h3>
+                    <ul>
+                        <li>Общежитие (6 мест)</li>
+                        <li>Кухня, душ, санузел</li>
+                        <li>Гараж 25 м²</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>2 этаж</h3>
+                    <ul>
+                        <li>2 офиса (по 30 м²)</li>
+                        <li>Отделка: ламинат, пластиковые окна</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция "Контакты" -->
+    <section id="contacts" style="background: #333; color: white;">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts">
+                <div>
+                    <h3>Адрес</h3>
+                    <p>Московская обл., Воскресенск, ул. Центральная, с36А</p>
+                </div>
+                <div>
+                    <h3>Телефон</h3>
+                    <p>+7 (999) 911-50-20</p>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <p>info@vskbase.ru</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Плавная прокрутка к якорям -->
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

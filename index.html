@@ -3,9 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Промбаза в Воскресенске - Продажа комплекса</title>
+    <title>VSKbase — Промбаза в Воскресенске | Продажа производственно-складского комплекса</title>
+    <meta name="description" content="Продажа промбазы 2020 м² в Воскресенске: офис, склад, производство. Готовые коммуникации, охраняемая территория, отличная транспортная доступность.">
+    <meta name="keywords" content="промбаза, склад, производство, Воскресенск, купить помещение, логистический комплекс, аренда склада">
     <style>
-        /* Стили для WhatsApp-кнопки */
+        /* Графитовая цветовая схема */
+        :root {
+            --graphite: #22252A;
+            --graphite-light: #2E3239;
+            --accent: #FF6B35;
+            --text: #E0E0E0;
+            --text-light: #F5F5F5;
+        }
+        
+        /* Фон с геометрическими фигурами */
+        body {
+            background: 
+                linear-gradient(135deg, var(--graphite) 0%, var(--graphite-light) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="50 0, 100 50, 50 100, 0 50" fill="rgba(255,107,53,0.05)"/></svg>');
+            background-size: cover, 200px 200px;
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Контейнеры */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Карточки */
+        .card {
+            background: rgba(30, 33, 38, 0.8);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #e05a2b;
+            transform: translateY(-2px);
+        }
+        
+        /* WhatsApp кнопка */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
@@ -18,67 +79,123 @@
             text-align: center;
             line-height: 60px;
             font-size: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
             z-index: 1000;
-            transition: all 0.3s;
+            animation: pulse 2s infinite;
         }
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            background: #128C7E;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
-
-        /* Стили формы */
-        #request-form {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        
+        /* Форма */
         #request-form input,
-        #request-form textarea {
+        #request-form textarea,
+        #request-form select {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        #request-form button {
-            background: #ff6600;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
             color: white;
+        }
+        
+        /* Раскрывающиеся блоки */
+        .expand-btn {
+            background: none;
             border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+            color: var(--accent);
+            text-align: left;
             width: 100%;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
+        .expand-content {
+            padding: 20px 0;
+            display: none;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- WhatsApp-кнопка (появляется на всех страницах) -->
+    <!-- WhatsApp кнопка -->
     <a href="https://wa.me/+79999115020" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Форма заявки -->
-    <section id="request">
+    <!-- Основной контент -->
+    <header id="home">
         <div class="container">
-            <h2>Оставить заявку</h2>
+            <h1>ПРОМБАЗА В ВОСКРЕСЕНСКЕ</h1>
+            <p>Продажа производственно-складского комплекса с развитой инфраструктурой</p>
+            <a href="#request" class="btn">Оставить заявку</a>
+        </div>
+    </header>
+
+    <!-- Форма заявки -->
+    <section id="request" class="container" style="margin: 80px auto;">
+        <div class="card">
+            <h2 style="margin-bottom: 30px; color: var(--accent);">Оставить заявку</h2>
             <form id="request-form" action="mailto:info@vskbase.ru" method="post" enctype="text/plain">
                 <input type="text" name="name" placeholder="Ваше имя" required>
-                <input type="tel" name="phone" placeholder="Телефон" required>
+                <input type="tel" name="phone" placeholder="Телефон" id="phone-input" required>
                 <textarea name="message" rows="5" placeholder="Ваш вопрос"></textarea>
-                <button type="submit">Отправить заявку</button>
+                <button type="submit" class="btn">Отправить заявку</button>
             </form>
         </div>
     </section>
 
-    <!-- Скрипт для обработки формы (откроет почтовый клиент) -->
+    <!-- Раскрывающиеся блоки с поисковыми запросами -->
+    <section class="container" style="margin-bottom: 80px;">
+        <div class="card">
+            <h3 style="color: var(--accent); margin-bottom: 20px;">Возможно вы искали:</h3>
+            
+            <div class="expandable">
+                <button class="expand-btn">Перевалочная база</button>
+                <div class="expand-content">
+                    <p>Комплекс идеально подходит для организации перевалочного пункта грузов с удобной логистикой.</p>
+                </div>
+            </div>
+            
+            <div class="expandable">
+                <button class="expand-btn">Логистический парк</button>
+                <div class="expand-content">
+                    <p>Площадка оборудована для стоянки и маневрирования большегрузов.</p>
+                </div>
+            </div>
+            
+            <!-- Остальные 10+ пунктов -->
+        </div>
+    </section>
+
+    <!-- Скрытый SEO-блок -->
+    <div style="position: absolute; left: -9999px; top: 0;">
+        <h1>Промбаза Воскресенск</h1>
+        <p>Купить производственно-складской комплекс в Воскресенске. Продажа промбазы с офисом и охраняемой территорией. Объект подходит для производства, склада, логистического центра, автосервиса.</p>
+        <!-- Другие ключевые фразы -->
+    </div>
+
     <script>
+        // Автоподстановка +7 в телефон
+        document.getElementById('phone-input').addEventListener('input', function(e) {
+            if (!this.value.startsWith('+7') && this.value.length > 0) {
+                this.value = '+7' + this.value.replace(/^\+7/, '');
+            }
+        });
+        
+        // Раскрывающиеся блоки
+        document.querySelectorAll('.expand-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        
+        // Отправка формы
         document.getElementById('request-form').addEventListener('submit', function(e) {
             e.preventDefault();
             this.submit();
@@ -86,6 +203,5 @@
             this.reset();
         });
     </script>
-
 </body>
 </html>

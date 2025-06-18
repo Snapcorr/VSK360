@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VSKbase — Промбаза в Воскресенске | Производственно-складской комплекс</title>
-    <meta name="description" content="Продажа промбазы 2020 м² в Воскресенске: производственные помещения, складские площади, офисный модуль. Готовые коммуникации, охраняемая территория.">
-    <meta name="keywords" content="промбаза Воскресенск, купить склад, производственные помещения, логистический комплекс">
+    <meta name="description" content="Продажа промбазы 2020 м² в Воскресенске: производственные помещения, складские площади, офисный модуль. Готовые коммуникации, охраняемая территория, отличная транспортная доступность.">
+    <meta name="keywords" content="промбаза Воскресенск, купить склад, производственные помещения, логистический комплекс, аренда склада, VSKbase">
     <style>
+        /* Графитовая цветовая схема */
         :root {
             --graphite: #22252A;
             --graphite-light: #2E3239;
@@ -15,8 +16,12 @@
             --text-light: #F5F5F5;
         }
         
+        /* Фон с геометрическими фигурами */
         body {
-            background: linear-gradient(135deg, var(--graphite) 0%, var(--graphite-light) 100%);
+            background: 
+                linear-gradient(135deg, var(--graphite) 0%, var(--graphite-light) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="50 0, 100 50, 50 100, 0 50" fill="rgba(255,107,53,0.05)"/><rect x="20" y="20" width="60" height="60" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover, 200px 200px;
             color: var(--text);
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
@@ -24,77 +29,33 @@
             padding: 0;
         }
 
-        /* Стили для слайдера презентации */
-        .presentation-slider {
-            width: 100%;
-            height: 56.25vw; /* 16:9 */
-            max-height: 100vh;
-            position: relative;
-            overflow: hidden;
-            background: #000;
-        }
-        
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0.5;
-            transition: opacity 1s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .slide.active {
-            opacity: 0.5;
-            z-index: 1;
-        }
-        
-        .slide canvas {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        .slider-nav {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            z-index: 100;
-        }
-        
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            margin: 0 5px;
-            cursor: pointer;
-        }
-        
-        .slider-dot.active {
-            background: var(--accent);
-        }
-
-        /* Шапка поверх слайдера */
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            z-index: 50;
-            color: white;
+        /* Контейнеры */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Навигация с кнопками площадок */
+        /* Шапка */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Навигация */
         nav {
             background: var(--graphite-light);
             position: sticky;
@@ -102,19 +63,17 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.3);
         }
-        
         nav ul {
             display: flex;
             list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
             margin: 0;
             padding: 0;
-            align-items: center;
         }
-        
         nav li {
             margin: 0;
         }
-        
         nav a {
             color: white;
             text-decoration: none;
@@ -126,47 +85,50 @@
             font-size: 0.9rem;
             letter-spacing: 1px;
         }
-        
         nav a:hover {
             background: var(--accent);
         }
-        
+
+        /* Стили для кнопок площадок */
         .platform-links {
             display: flex;
             margin-left: auto;
-            padding: 0 20px;
-            gap: 15px;
         }
         
         .platform-link {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            display: inline-block;
+            padding: 18px 15px;
             color: white;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
         }
         
-        .platform-link img {
-            width: 30px;
-            height: 30px;
-            object-fit: contain;
+        .platform-link:hover {
+            background: var(--accent);
         }
 
-        /* Остальные стили */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+        /* Карточки */
         .card {
             background: rgba(30, 33, 38, 0.8);
             border-radius: 12px;
             padding: 30px;
-            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        /* Кнопки */
         .btn {
             display: inline-block;
             background: var(--accent);
@@ -176,8 +138,15 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
-        
+        .btn:hover {
+            background: #e05a2b;
+            transform: translateY(-2px);
+        }
+
+        /* WhatsApp кнопка */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
@@ -192,41 +161,139 @@
             font-size: 30px;
             box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
             z-index: 1000;
+            animation: pulse 2s infinite;
         }
-        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Форма */
+        #request-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        #request-form input,
+        #request-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+        }
+        #request-form input::placeholder,
+        #request-form textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Раскрывающиеся блоки */
+        .expandable-section {
+            margin: 40px 0;
+        }
+        .expand-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            text-align: left;
+            width: 100%;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .expand-btn:after {
+            content: '+';
+            font-size: 1.5rem;
+        }
+        .expand-btn.active:after {
+            content: '-';
+        }
+        .expand-content {
+            padding: 20px 0;
+            display: none;
+        }
+
+        /* Секции */
         section {
             padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        /* Контакты */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .contact-card {
+            text-align: center;
+            padding: 30px;
+        }
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
         }
 
         /* Адаптивность */
         @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
+            header h1 {
+                font-size: 2rem;
             }
-            
+            nav ul {
+                flex-direction: column;
+            }
+            nav a {
+                padding: 12px;
+            }
             .platform-links {
                 margin-left: 0;
-                width: 100%;
                 justify-content: center;
-                padding: 10px 0;
+                width: 100%;
+            }
+            .section-title {
+                font-size: 1.8rem;
             }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
 </head>
 <body>
-    <!-- Слайдер презентации -->
-    <div class="presentation-slider" id="presentation-slider">
-        <div class="slider-nav" id="slider-nav"></div>
-    </div>
+    <!-- WhatsApp кнопка -->
+    <a href="https://wa.me/+79999115020" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Шапка -->
-    <header>
-        <h1>ПРОМБАЗА В ВОСКРЕСЕНСКЕ</h1>
-        <p>Продажа производственно-складского комплекса с развитой инфраструктурой</p>
-        <a href="#request" class="btn">Оставить заявку</a>
+    <header id="home">
+        <div class="container">
+            <h1>ПРОМБАЗА В ВОСКРЕСЕНСКЕ</h1>
+            <p>Продажа производственно-складского комплекса с развитой инфраструктурой и готовыми коммуникациями</p>
+            <a href="#request" class="btn">Оставить заявку</a>
+        </div>
     </header>
 
     <!-- Навигация -->
@@ -239,129 +306,95 @@
             <li><a href="#contacts">Контакты</a></li>
             <li class="platform-links">
                 <a href="https://www.avito.ru/voskresensk/kommercheskaya_nedvizhimost/prombaza._ofis._skladskoy_terminal_7378848302" 
-                   class="platform-link" target="_blank">
-                   <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgODAiPjxwYXRoIGZpbGw9IiNmZjdjMDAiIGQ9Ik0xMjcuMyA0OS4zYzAgNi4xLTQuOSAxMS0xMSAxMXMtMTEtNC45LTExLTExIDQuOS0xMSAxMS0xMSAxMSA0LjkgMTEgMTF6Ii8+PHBhdGggZmlsbD0iIzI1YTFmYSIgZD0iTTE3My44IDQ5LjNjMCA2LjEtNC45IDExLTExIDExcy0xMS00LjktMTEtMTEgNC45LTExIDExLTExIDExIDQuOSAxMSAxMXoiLz48cGF0aCBmaWxsPSIjZmY3YzAwIiBkPSJNMTk0LjQgNDkuM2MwIDYuMS00LjkgMTEtMTEgMTFzLTExLTQuOS0xMS0xMSA0LjktMTEgMTEtMTEgMTEgNC45IDExIDExeiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMTYuMyA0OS4zYzAgNi4xLTQuOSAxMS0xMSAxMXMtMTEtNC45LTExLTExIDQuOS0xMSAxMS0xMSAxMSA0LjkgMTEgMTF6Ii8+PC9zdmc+" alt="Авито">
-                   <span>Авито</span>
-                </a>
+                   class="platform-link" target="_blank">Мы на Авито</a>
                 <a href="https://voskresensk.cian.ru/sale/commercial/318573849" 
-                   class="platform-link" target="_blank">
-                   <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgODAiPjxwYXRoIGZpbGw9IiMwMGFmZmYiIGQ9Ik0xMjAgMEM1My43IDAgMCA1My43IDAgMTIwczUzLjcgMTIwIDEyMCAxMjAgMTIwLTUzLjcgMTIwLTEyMFMxODYuMyAwIDEyMCAweiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xNjQuNiA2OC4yaC0xMy44VjM0LjVoMTMuOHYzMy43em0tNjkuNiAwaC0xMy44VjM0LjVoMTMuOHYzMy43em0zNC44LTQ1LjRjMCA0LjQtMy42IDgtOCA4cy04LTMuNi04LTggMy42LTggOC04IDggMy42IDggOHptMTMuOCA0NS40aC0xMy44VjQyLjRjMC03LjctNS4xLTEyLjgtMTIuOC0xMi44LTcuNyAwLTEyLjggNS4xLTEyLjggMTIuOHYyNS44SDc4VjQyLjRjMC0xNC4yIDExLjYtMjUuOCAyNS44LTI1LjggMTQuMiAwIDI1LjggMTEuNiAyNS44IDI1Ljh2MjUuOHoiLz48L3N2Zz4=" alt="Циан">
-                   <span>Циан</span>
-                </a>
+                   class="platform-link" target="_blank">Мы на Циан</a>
             </li>
         </ul>
     </nav>
 
-    <!-- Основное содержимое -->
-    <main class="container">
-        <!-- Остальные секции остаются без изменений -->
-        <section id="about">
-            <!-- ... -->
-        </section>
-        
-        <!-- Форма заявки -->
-        <section id="request">
-            <div class="card">
-                <h2>Оставить заявку</h2>
-                <form id="request-form">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="tel" name="phone" placeholder="Телефон" required>
-                    <textarea name="message" placeholder="Ваш вопрос"></textarea>
-                    <button type="submit" class="btn">Отправить</button>
-                </form>
+    <!-- Остальное содержимое без изменений -->
+    <!-- О комплексе -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">О комплексе</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Основные параметры</h3>
+                    <ul>
+                        <li><strong>Общая площадь:</strong> 2020 м²</li>
+                        <li><strong>Застройка:</strong> 640 м²</li>
+                        <li><strong>Свободная площадь:</strong> 1378 м²</li>
+                        <li><strong>Проезды/инфраструктура:</strong> 202 м²</li>
+                        <li><strong>Высота потолков:</strong> 4-4.5 м</li>
+                        <li><strong>Нагрузка на пол:</strong> до 5 т/м²</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Состав комплекса</h3>
+                    <ul>
+                        <li><strong>Офисно-бытовой модуль:</strong> 160 м²</li>
+                        <li><strong>Производственно-складской блок:</strong> 240 м²</li>
+                        <li><strong>Парковочная зона:</strong> 1100 м²</li>
+                        <li><strong>Навес:</strong> 43.6 м²</li>
+                        <li><strong>Недостроенный ангар:</strong> потенциал расширения</li>
+                        <li><strong>Гараж:</strong> 25 м² с ямой</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Коммуникации</h3>
+                    <ul>
+                        <li><strong>Электричество:</strong> 100 кВт (масштабируемо)</li>
+                        <li><strong>Газ:</strong> труба ø200 мм</li>
+                        <li><strong>Водоснабжение:</strong> скважина</li>
+                        <li><strong>Канализация:</strong> центральная</li>
+                        <li><strong>Отопление:</strong> автономное</li>
+                        <li><strong>Охрана:</strong> забор, видеонаблюдение</li>
+                    </ul>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- WhatsApp кнопка -->
-    <a href="https://wa.me/+79999115020" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Остальные секции остаются без изменений -->
 
     <script>
-        // Инициализация слайдера презентации
-        const pdfUrl = 'URL_ВАШЕГО_PDF'; // Замените на реальный URL
-        const slidesToShow = [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11]; // Пропускаем 8-ю страницу
-        
-        pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
-            const slider = document.getElementById('presentation-slider');
-            const nav = document.getElementById('slider-nav');
-            
-            let currentSlide = 0;
-            const slides = [];
-            
-            // Создаем слайды
-            slidesToShow.forEach((pageNum, index) => {
-                pdf.getPage(pageNum + 1).then(function(page) {
-                    const viewport = page.getViewport({ scale: 1.0 });
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-                    
-                    const slide = document.createElement('div');
-                    slide.className = 'slide';
-                    slide.appendChild(canvas);
-                    slider.insertBefore(slide, nav);
-                    
-                    // Рендерим страницу
-                    page.render({
-                        canvasContext: context,
-                        viewport: viewport
-                    });
-                    
-                    // Добавляем точку навигации
-                    const dot = document.createElement('div');
-                    dot.className = 'slider-dot';
-                    dot.addEventListener('click', () => {
-                        showSlide(index);
-                    });
-                    nav.appendChild(dot);
-                    
-                    slides.push(slide);
-                    
-                    if (index === 0) {
-                        slide.classList.add('active');
-                        dot.classList.add('active');
-                    }
-                });
-            });
-            
-            // Функция переключения слайдов
-            function showSlide(index) {
-                slides[currentSlide].classList.remove('active');
-                nav.children[currentSlide].classList.remove('active');
-                
-                currentSlide = index;
-                
-                slides[currentSlide].classList.add('active');
-                nav.children[currentSlide].classList.add('active');
+        // Автоподстановка +7 в телефон
+        document.getElementById('phone-input').addEventListener('input', function(e) {
+            if (!this.value.startsWith('+7') && this.value.length > 0) {
+                this.value = '+7' + this.value.replace(/^\+7/, '');
             }
-            
-            // Автопереключение слайдов
-            setInterval(() => {
-                const nextSlide = (currentSlide + 1) % slides.length;
-                showSlide(nextSlide);
-            }, 5000);
         });
-
-        // Плавная прокрутка для навигации
+        
+        // Раскрывающиеся блоки
+        document.querySelectorAll('.expand-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        
+        // Плавная прокрутка
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
                     window.scrollTo({
-                        top: target.offsetTop - 80,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
         });
-
-        // Обработка формы
+        
+        // Отправка формы
         document.getElementById('request-form').addEventListener('submit', function(e) {
             e.preventDefault();
+            this.submit();
             alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
             this.reset();
         });

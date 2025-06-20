@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VSKbase — Логистический комплекс в Воскресенске | Производственно-складской комплекс</title>
     <meta name="description" content="Логистический комплекс в Воскресенске. Продажа промбазы 2020 м²: производственные помещения, складские площади, офисный модуль. Готовые коммуникации, охраняемая территория.">
-    <meta name="keywords" content="логистический комплекс Воскресенск, промбаза Воскресенск, купить склад, производственные помещения, VSKbase">
+    <meta name="keywords" content="логистический комплекс Воскресенск, промбаза Воскресенск, купить склад, производственные помещения, VSKbase, складские помещения Воскресенск, аренда склада">
     <style>
+        /* Графитовая цветовая схема */
         :root {
             --graphite: #22252A;
             --graphite-light: #2E3239;
@@ -17,6 +18,7 @@
             --avito: #3B7EFF;
         }
         
+        /* Фон с геометрическими фигурами */
         body {
             background: 
                 linear-gradient(135deg, var(--graphite) 0%, var(--graphite-light) 100%),
@@ -27,6 +29,33 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+        }
+
+        /* Контейнеры */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
         }
 
         /* Навигация */
@@ -69,8 +98,169 @@
             margin-right: 8px;
         }
 
-        /* Остальные стили остаются без изменений */
-        /* ... */
+        /* Карточки */
+        .card {
+            background: rgba(30, 33, 38, 0.8);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #e05a2b;
+            transform: translateY(-2px);
+        }
+
+        /* WhatsApp кнопка */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Форма */
+        #request-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        #request-form input,
+        #request-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+        }
+        #request-form input::placeholder,
+        #request-form textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Раскрывающиеся блоки */
+        .expandable-section {
+            margin: 40px 0;
+        }
+        .expand-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            text-align: left;
+            width: 100%;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .expand-btn:after {
+            content: '+';
+            font-size: 1.5rem;
+        }
+        .expand-btn.active:after {
+            content: '-';
+        }
+        .expand-content {
+            padding: 20px 0;
+            display: none;
+        }
+
+        /* Секции */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        /* Контакты */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .contact-card {
+            text-align: center;
+            padding: 30px;
+        }
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav a {
+                padding: 12px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -109,26 +299,256 @@
         </ul>
     </nav>
 
-    <!-- Секции остаются без изменений -->
-    <!-- ... -->
+    <!-- О комплексе -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">О комплексе</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Основные параметры</h3>
+                    <ul>
+                        <li><strong>Общая площадь:</strong> 2020 м²</li>
+                        <li><strong>Застройка:</strong> 640 м²</li>
+                        <li><strong>Свободная площадь:</strong> 1378 м²</li>
+                        <li><strong>Проезды/инфраструктура:</strong> 202 м²</li>
+                        <li><strong>Высота потолков:</strong> 4-4.5 м</li>
+                        <li><strong>Нагрузка на пол:</strong> до 5 т/м²</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Состав комплекса</h3>
+                    <ul>
+                        <li><strong>Офисно-бытовой модуль:</strong> 160 м²</li>
+                        <li><strong>Производственно-складской блок:</strong> 240 м²</li>
+                        <li><strong>Парковочная зона:</strong> 1100 м²</li>
+                        <li><strong>Навес:</strong> 43.6 м²</li>
+                        <li><strong>Недостроенный ангар:</strong> потенциал расширения</li>
+                        <li><strong>Гараж:</strong> 25 м² с ямой</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Коммуникации</h3>
+                    <ul>
+                        <li><strong>Электричество:</strong> 100 кВт (масштабируемо)</li>
+                        <li><strong>Газ:</strong> труба ø200 мм</li>
+                        <li><strong>Водоснабжение:</strong> скважина</li>
+                        <li><strong>Канализация:</strong> центральная</li>
+                        <li><strong>Отопление:</strong> автономное</li>
+                        <li><strong>Охрана:</strong> забор, видеонаблюдение</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- SEO-блок в подвале -->
+    <!-- Характеристики -->
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">Технические характеристики</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Производственный блок</h3>
+                    <ul>
+                        <li>3 изолированных бокса с воротами 3.6×3 м</li>
+                        <li>Металлокаркас с кирпичными колоннами</li>
+                        <li>Односкатная кровля с гидроизоляцией</li>
+                        <li>Бетонный пол, нагрузка 5 т/м²</li>
+                        <li>Электричество и отопление</li>
+                        <li>Подходит для производства, склада, СТО</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Офисный модуль</h3>
+                    <ul>
+                        <li><strong>1 этаж:</strong> общежитие (6 мест), кухня, душ</li>
+                        <li><strong>2 этаж:</strong> 2 офиса по 30 м²</li>
+                        <li>Пластиковые окна, ламинат</li>
+                        <li>Радиаторы отопления</li>
+                        <li>Электрические щиты</li>
+                        <li>Примыкающий гараж 25 м²</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Территория</h3>
+                    <ul>
+                        <li>Асфальтированные площадки</li>
+                        <li>Сквозной проезд для фур</li>
+                        <li>Ширина проездов: 6 м</li>
+                        <li>Радиус разворота: 15 м</li>
+                        <li>Макс. нагрузка: 20 т</li>
+                        <li>Хвойные деревья по периметру</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Локация -->
+    <section id="location">
+        <div class="container">
+            <h2 class="section-title">Локация</h2>
+            <div class="card">
+                <h3>Транспортная доступность</h3>
+                <ul>
+                    <li><strong>Трасса М-5 "Урал":</strong> 5 минут</li>
+                    <li><strong>Склады Wildberries/Ozon:</strong> 10 км</li>
+                    <li><strong>Ж/д станция "Воскресенск":</strong> 7 км</li>
+                    <li><strong>МКАД:</strong> 80 км</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Инфраструктура -->
+    <section id="infrastructure">
+        <div class="container">
+            <h2 class="section-title">Инфраструктура</h2>
+            <div class="card">
+                <h3>В радиусе 3 км</h3>
+                <ul>
+                    <li>Автозаправки (Лукойл, Роснефть)</li>
+                    <li>Кафе и столовые</li>
+                    <li>Магазины строительных материалов</li>
+                    <li>Автосервисы</li>
+                    <li>Жилые кварталы для аренды жилья сотрудникам</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раскрывающиеся блоки с поисковыми запросами -->
+    <section class="container">
+        <div class="card">
+            <h3 style="color: var(--accent); margin-bottom: 30px;">Возможно вы искали:</h3>
+            
+            <div class="expandable-section">
+                <button class="expand-btn">Перевалочная база</button>
+                <div class="expand-content">
+                    <p>Комплекс идеально подходит для организации перевалочного пункта грузов с удобной логистикой к трассе М-5 "Урал" и складам Wildberries/Ozon.</p>
+                </div>
+            </div>
+            
+            <div class="expandable-section">
+                <button class="expand-btn">Логистический парк</button>
+                <div class="expand-content">
+                    <p>Площадка оборудована для стоянки и маневрирования большегрузов с радиусом разворота 15 м и нагрузкой до 20 тонн.</p>
+                </div>
+            </div>
+            
+            <div class="expandable-section">
+                <button class="expand-btn">Производственная площадка</button>
+                <div class="expand-content">
+                    <p>Готовые цеха с высотой потолков 4.5 м и нагрузкой на пол 5 т/м², подключением 100 кВт электроэнергии.</p>
+                </div>
+            </div>
+            
+            <div class="expandable-section">
+                <button class="expand-btn">Складской терминал</button>
+                <div class="expand-content">
+                    <p>Помещения с контролем температуры и влажности, возможностью организации зон хранения разных категорий товаров.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заявки -->
+    <section id="request" style="padding-top: 0;">
+        <div class="container">
+            <div class="card">
+                <h2 class="section-title" style="margin-bottom: 30px;">Оставить заявку</h2>
+                <form id="request-form" action="mailto:info@vskbase.ru" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="tel" name="phone" placeholder="Телефон" id="phone-input" required>
+                    <textarea name="message" rows="5" placeholder="Ваш вопрос"></textarea>
+                    <button type="submit" class="btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Телефон</h3>
+                    <p><a href="tel:+79999115020">+7 (999) 911-50-20</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/+79999115020" target="_blank">Написать в WhatsApp</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@vskbase.ru">info@vskbase.ru</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
     <footer style="background: var(--graphite-light); padding: 30px 0; text-align: center;">
         <div class="container">
-            <p>Логистический комплекс в городе Воскресенске. Производственно-складские помещения с офисным модулем и охраняемой территорией. Идеально для склада, производства, СТО и перевалки грузов.</p>
+            <p>Логистический комплекс в городе Воскресенске. Производственно-складские помещения с офисным модулем и охраняемой территорией.</p>
         </div>
     </footer>
 
     <!-- Скрытый SEO-блок -->
-    <div style="position: absolute; left: -9999px; top: 0;">
+    <div style="position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden;">
         <h1>Логистический комплекс в Воскресенске</h1>
-        <p>Купить логистический комплекс в Воскресенске. Промбаза с офисом и охраняемой территорией. Площадь 2020 м², высота потолков 4.5 м, нагрузка на пол 5 т/м². Близко к трассе М-5 "Урал".</p>
+        <p>Купить логистический комплекс в Воскресенске. Промбаза с офисом и охраняемой территорией. Площадь 2020 м², высота потолков 4.5 м, нагрузка на пол 5 т/м². Близко к трассе М-5 "Урал", 10 км до складов Wildberries и Ozon.</p>
         <h2>Логистический комплекс город Воскресенск</h2>
+        <h3>Поисковые запросы:</h3>
+        <ul>
+            <li>купить промбазу в Воскресенске</li>
+            <li>складские помещения Воскресенск</li>
+            <li>производственные площади Московская область</li>
+            <li>логистический комплекс купить</li>
+            <li>аренда склада с офисом</li>
+            <li>перевалочная база Воскресенск</li>
+            <li>складской терминал Московская область</li>
+        </ul>
     </div>
 
     <script>
-        // Скрипты остаются без изменений
-        // ...
+        // Автоподстановка +7 в телефон
+        document.getElementById('phone-input').addEventListener('input', function(e) {
+            if (!this.value.startsWith('+7') && this.value.length > 0) {
+                this.value = '+7' + this.value.replace(/^\+7/, '');
+            }
+        });
+        
+        // Раскрывающиеся блоки
+        document.querySelectorAll('.expand-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Отправка формы
+        document.getElementById('request-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.submit();
+            alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
     </script>
 </body>
 </html>

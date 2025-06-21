@@ -7,6 +7,7 @@
     <meta name="description" content="Логистический комплекс в Воскресенске. Продажа промбазы 2020 м²: производственные помещения, складские площади, офисный модуль. Готовые коммуникации, охраняемая территория.">
     <meta name="keywords" content="логистический комплекс Воскресенск, промбаза Воскресенск, купить склад, производственные помещения, VSKbase, складские помещения Воскресенск, аренда склада">
     
+    <!-- OpenGraph / Social Media Meta -->
     <meta property="og:title" content="VSKbase — Логистический комплекс в Воскресенске">
     <meta property="og:description" content="Продажа промбазы 2020 м² с производственными и складскими помещениями.">
     <meta property="og:type" content="website">
@@ -14,12 +15,15 @@
     <meta property="og:image" content="https://vsk-360.vercel.app/images/og-image.jpg">
     <meta property="og:site_name" content="VSKbase">
     
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="VSKbase — Логистический комплекс в Воскресенске">
     <meta name="twitter:description" content="Производственно-складской комплекс с готовыми коммуникациями">
     
+    <!-- Preload JSON Data -->
     <link rel="preload" href="/data.json" as="fetch" crossorigin="anonymous">
     
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -79,7 +83,7 @@
 
         /* Шапка */
         header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/header-bg.jpg') no-repeat center/cover;
             color: white;
             padding: 120px 0;
             text-align: center;
@@ -177,7 +181,7 @@
         /* WhatsApp кнопка */
         .whatsapp-btn {
             position: fixed;
-            bottom: 30px;
+            bottom: 70px;
             right: 30px;
             background: #25D366;
             color: white;
@@ -287,6 +291,9 @@
 
         /* Адаптивность */
         @media (max-width: 768px) {
+            header {
+                padding: 80px 0;
+            }
             header h1 {
                 font-size: 2rem;
             }
@@ -299,16 +306,29 @@
             .section-title {
                 font-size: 1.8rem;
             }
+            .card {
+                padding: 20px;
+            }
+            .whatsapp-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 24px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <a href="https://wa.me/+79999115020" class="whatsapp-btn" target="_blank">
+    <!-- WhatsApp кнопка -->
+    <a href="https://wa.me/+79999115020" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Шапка -->
     <header id="home">
         <div class="container">
             <h1>ЛОГИСТИЧЕСКИЙ КОМПЛЕКС В ВОСКРЕСЕНСКЕ</h1>
@@ -317,9 +337,10 @@
         </div>
     </header>
 
+    <!-- Навигация -->
     <nav>
         <ul>
-            <li><a href="https://voskresensk.cian.ru/sale/commercial/318573849" target="_blank" style="background: var(--cian); margin-right: auto;">
+            <li><a href="https://voskresensk.cian.ru/sale/commercial/318573849" target="_blank" rel="noopener noreferrer" style="background: var(--cian); margin-right: auto;">
                 <i class="fas fa-building"></i> ЦИАН
             </a></li>
             
@@ -329,12 +350,13 @@
             <li><a href="#infrastructure">Инфраструктура</a></li>
             <li><a href="#contacts">Контакты</a></li>
             
-            <li><a href="https://www.avito.ru/voskresensk/kommercheskaya_nedvizhimost/prombaza._ofis._skladskoy_terminal_7378848302" target="_blank" style="background: var(--avito); margin-left: auto;">
+            <li><a href="https://www.avito.ru/voskresensk/kommercheskaya_nedvizhimost/prombaza._ofis._skladskoy_terminal_7378848302" target="_blank" rel="noopener noreferrer" style="background: var(--avito); margin-left: auto;">
                 <i class="fas fa-home"></i> АВИТО
             </a></li>
         </ul>
     </nav>
 
+    <!-- О комплексе -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">О комплексе</h2>
@@ -376,6 +398,7 @@
         </div>
     </section>
 
+    <!-- Характеристики -->
     <section id="features">
         <div class="container">
             <h2 class="section-title">Технические характеристики</h2>
@@ -417,6 +440,7 @@
         </div>
     </section>
 
+    <!-- Локация -->
     <section id="location">
         <div class="container">
             <h2 class="section-title">Локация</h2>
@@ -432,6 +456,7 @@
         </div>
     </section>
 
+    <!-- Инфраструктура -->
     <section id="infrastructure">
         <div class="container">
             <h2 class="section-title">Инфраструктура</h2>
@@ -448,6 +473,7 @@
         </div>
     </section>
 
+    <!-- Раскрывающиеся блоки с поисковыми запросами -->
     <section class="container">
         <div class="card">
             <h3 style="color: var(--accent); margin-bottom: 30px;">Возможно вы искали:</h3>
@@ -482,11 +508,14 @@
         </div>
     </section>
 
+    <!-- Форма заявки -->
     <section id="request" style="padding-top: 0;">
         <div class="container">
             <div class="card">
                 <h2 class="section-title" style="margin-bottom: 30px;">Оставить заявку</h2>
-                <form id="request-form" action="mailto:info@vskbase.ru" method="post" enctype="text/plain">
+                <form id="request-form" action="https://formsubmit.co/info@vskbase.ru" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://vsk-360.vercel.app/thanks.html">
                     <input type="text" name="name" placeholder="Ваше имя" required>
                     <input type="tel" name="phone" placeholder="Телефон" id="phone-input" required>
                     <textarea name="message" rows="5" placeholder="Ваш вопрос"></textarea>
@@ -496,6 +525,7 @@
         </div>
     </section>
 
+    <!-- Контакты -->
     <section id="contacts">
         <div class="container">
             <h2 class="section-title">Контакты</h2>
@@ -508,7 +538,7 @@
                 <div class="contact-card">
                     <i class="fab fa-whatsapp"></i>
                     <h3>WhatsApp</h3>
-                    <p><a href="https://wa.me/+79999115020" target="_blank">Написать в WhatsApp</a></p>
+                    <p><a href="https://wa.me/+79999115020" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a></p>
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-envelope"></i>
@@ -519,12 +549,14 @@
         </div>
     </section>
 
+    <!-- Футер -->
     <footer style="background: var(--graphite-light); padding: 30px 0; text-align: center;">
         <div class="container">
             <p>Логистический комплекс в городе Воскресенске. Производственно-складские помещения с офисным модулем и охраняемой территорией.</p>
         </div>
     </footer>
 
+    <!-- Скрытый SEO-блок -->
     <div style="position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden;">
         <h1>Логистический комплекс в Воскресенске</h1>
         <p>Купить логистический комплекс в Воскресенске. Промбаза с офисом и охраняемой территорией. Площадь 2020 м², высота потолков 4.5 м, нагрузка на пол 5 т/м². Близко к трассе М-5 "Урал", 10 км до складов Wildberries и Ozon.</p>
@@ -542,39 +574,50 @@
     </div>
 
     <script>
-        // Автоподстановка +7 в телефон
-        document.getElementById('phone-input').addEventListener('input', function(e) {
-            if (!this.value.startsWith('+7') && this.value.length > 0) {
-                this.value = '+7' + this.value.replace(/^\+7/, '');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Автоподстановка +7 в телефон
+            const phoneInput = document.getElementById('phone-input');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    if (!this.value.startsWith('+7') && this.value.length > 0) {
+                        this.value = '+7' + this.value.replace(/^\+7/, '');
+                    }
+                });
             }
-        });
-        
-        // Раскрывающиеся блоки
-        document.querySelectorAll('.expand-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const content = this.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-        
-        // Плавная прокрутка
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
+            
+            // Раскрывающиеся блоки с проверкой элементов
+            document.querySelectorAll('.expand-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    if (content) {
+                        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                    }
                 });
             });
-        });
-        
-        // Отправка формы
-        document.getElementById('request-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            this.submit();
-            alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-            this.reset();
+            
+            // Плавная прокрутка с проверкой
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Загрузка JSON данных
+            fetch('/data.json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Данные объекта:', data);
+                    // Можно динамически обновлять контент
+                })
+                .catch(error => console.error('Ошибка загрузки данных:', error));
         });
     </script>
 </body>
